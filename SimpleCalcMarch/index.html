@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        font-size: 20px;
+        /* color: white; */
+      }
+
+      .inputDiv {
+        display: flex;
+        justify-content: space-between;
+      }
+      /* input{
+        font-size: 11px;
+      } */
+      .mainDiv {
+        margin: 200px;
+        background-color: rgba(255, 128, 0, 0.515);
+        height: 300px;
+        width: 600px;
+        padding: 10px;
+      }
+
+      .buttonDiv {
+        display: flex;
+        width: 600px;
+        align-items: center;
+        /* background-color: aquamarine; */
+        justify-content: space-around;
+        margin: 20px 0px 20px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainDiv">
+      <div class="inputDiv">
+        <input type="number" placeholder="Input first number" id="input1" />
+        <input type="number" placeholder="Input second number" id="input2" />
+      </div>
+      <div class="buttonDiv">
+        <button id="add" type="button" onclick="addNumbers()">+</button>
+        <button id="multiply" type="button" onclick="multiplyNumbers()">
+          X
+        </button>
+        <button id="divide" type="button" onclick="divideNumbers()">/</button>
+        <button id="subtract" type="button" onclick="subtractNumbers()">
+          -
+        </button>
+      </div>
+      <div id="resultDiv"></div>
+    </div>
+    <script>
+      let resultDiv = document.getElementById("resultDiv");
+
+      function addNumbers() {
+        let num1 = +document.getElementById("input1").value;
+        let num2 = +document.getElementById("input2").value;
+        let sum = num1 + num2;
+        resultDiv.innerHTML = `The sum of ${num1} and ${num2} is ${sum}`;
+      }
+
+      function multiplyNumbers() {
+        let num1 = +document.getElementById("input1").value;
+        let num2 = +document.getElementById("input2").value;
+        let multiply = num1 * num2;
+        resultDiv.innerHTML = `The multiplication of ${num1} and ${num2} is ${multiply}`;
+      }
+
+      function divideNumbers() {
+        let num1 = +document.getElementById("input1").value;
+        let num2 = +document.getElementById("input2").value;
+        let divide = num1 / num2;
+        resultDiv.innerHTML = `The remainder of ${num1} and ${num2} is ${divide}`;
+      }
+
+      function subtractNumbers() {
+        let num1 = +document.getElementById("input1").value;
+        let num2 = +document.getElementById("input2").value;
+        let subtract = num1 - num2;
+        resultDiv.innerHTML = `The remainder of ${num1} and ${num2} is ${subtract}`;
+        
+      }
+    </script>
+  </body>
+</html>

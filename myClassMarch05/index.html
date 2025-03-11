@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h3>FILTER VULGAR WORDS</h3>
+      <input type="text" id="input" placeholder="ENTER SENTENCE" /> <br />
+      <button id="myBtn" onclick="filter()">FILTER WORDS</button>
+      <h3 id="output"></h3>
+    </div>
+  </body>
+</html>
+<script>
+  let myInput = document.getElementById("input");
+  let myBtn = document.getElementById("myBtn");
+  let myOutput = document.getElementById("output");
+
+  function filter() {
+    let mySentence = myInput.value.toLowerCase()
+    let sensoredText = mySentence.replaceAll('shit', '****').replaceAll('fuck', '*****').replaceAll('foolish', '*****')
+    // mySentence = mySentence.split();
+    // console.log(mySentence);
+    // let vulgarWords = ["shit", "fuck"];
+    // mySentence = mySentence.replace(vulgarWords, "****");
+    // mySentence = mySentence.replace(/shit|fuck/g, "****");
+
+    myOutput.innerHTML = sensoredText;
+    console.log(mySentence);    
+  }
+  console.log(Math.ceil(Math.random()*19) + 1);
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="myInput" type="text" />
+    <button onclick="showNumber()">Generate</button>
+    <div id="outputDiv"></div>
+  </body>
+  <script>
+    let quiz1 =
+      "Love is the best thing in this world. Some found thier love and some are still looking for thier love";
+
+    console.log(quiz1.indexOf("love"));
+    console.log(quiz1.lastIndexOf("love"));
+    // console.log(quiz1.split('love'));
+    console.log(quiz1.split('love').length -1);
+
+
+
+    let outputDiv = document.getElementById("outputDiv");
+
+    function showNumber() {
+      let myInput = document.getElementById("myInput").value;
+      outputDiv.innerHTML = myInput.repeat(myInput.length);
+    }
+  </script>
+</html>

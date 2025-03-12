@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 100px 0;
+        padding: 10px;
+        font-size: 25px;
+        font-family: cursive;
+      }
+      input {
+        margin-right: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="myInput" type="text" placeholder="Enter a month" />
+    <button onclick="generateNumber()">Generate No of Days</button>
+    <div id="myOutput"></div>
+  </body>
+  <script>
+    let myOutput = document.getElementById("myOutput");
+
+    function generateNumber() {
+      let myInput = document.getElementById("myInput").value.toLowerCase();
+      switch (myInput) {
+        case "january":
+          // myOutput.innerHTML = "January has 31 days."
+          myOutput.innerHTML = `${myInput.toUpperCase()} has 31 days`;
+
+          break;
+
+        case "february":
+          myOutput.innerHTML = `${myInput.toUpperCase()} has 28 days`;
+        // myOutput.innerHTML = "February has 31 days."
+
+        default:
+          myOutput.innerHTML = `${myInput.toUpperCase()} is not a valid month`;
+
+          //   myOutput.innerHTML = "This is not a valid month";
+          break;
+      }
+    }
+  </script>
+</html>

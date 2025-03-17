@@ -29,18 +29,17 @@
     let scoreCount = document.getElementById("scoreCount");
     let guessResult = document.getElementById("guessResult");
     let guessInput = document.getElementById("guessInput");
-    let randomNum = Math.ceil(Math.random() * 9);
     let score = 0;
-    console.log(randomNum);
     function guessFunction() {
       let guessNumber = parseInt(guessInput.value);
+      let randomNum = Math.ceil(Math.random() * 9);
+      console.log(randomNum);
       // console.log(guessNumber);
       guessResult.innerHTML = "";
       if (guessNumber > 9 || guessNumber < 1) {
         guessResult.innerHTML = "INVALID NUMBER RANGE";
         randomNum = Math.ceil(Math.random() * 9);
         guessInput.value = "";
-
         console.log(randomNum);
       } else if (guessNumber === randomNum) {
         score++;
@@ -50,7 +49,7 @@
         // console.log(randomNum);
         guessInput.value = "";
       } else {
-        guessResult.innerHTML = "OOPS!!! YOU HAVE GUESSED WRONG";
+        guessResult.innerHTML = `OOPS!!! YOU HAVE GUESSED WRONG THE CORRECT NUMBER IS ${randomNum}`;
         randomNum = Math.ceil(Math.random() * 9);
         // console.log(randomNum);
         guessInput.value = "";

@@ -31,33 +31,21 @@
     let guessInput = document.getElementById("guessInput");
     let score = 0;
     function guessFunction() {
-      let guessNumber = parseInt(guessInput.value);
       let randomNum = Math.ceil(Math.random() * 9);
-      console.log(randomNum);
-      // console.log(guessNumber);
+      let guessNumber = parseInt(guessInput.value);
       guessResult.innerHTML = "";
-      if (guessNumber > 9 || guessNumber < 1) {
-        guessResult.innerHTML = "INVALID NUMBER RANGE";
-        randomNum = Math.ceil(Math.random() * 9);
+      if (guessNumber > 9 || guessNumber < 1 || guessNumber !== isNaN) {
+        alert("INVALID NUMBER RANGE");
         guessInput.value = "";
-        console.log(randomNum);
       } else if (guessNumber === randomNum) {
         score++;
         scoreCount.innerHTML = `Score = ${score}`;
         guessResult.innerHTML = "CONGRATULATIONS!!! YOU HAVE GUESSED RIGHT";
-        randomNum = Math.ceil(Math.random() * 9);
-        // console.log(randomNum);
         guessInput.value = "";
       } else {
-        guessResult.innerHTML = `OOPS!!! YOU HAVE GUESSED WRONG THE CORRECT NUMBER IS ${randomNum}`;
-        randomNum = Math.ceil(Math.random() * 9);
-        // console.log(randomNum);
+        guessResult.innerHTML = `OOPS!!! YOU HAVE GUESSED WRONG, THE CORRECT NUMBER IS ${randomNum}`;
         guessInput.value = "";
       }
     }
-
-    // guessInput === randomNum
-    //   ? ((guessResult.innerHTML = "YOU GUESSED RIGHT"), score++, scoreCount.innerHTML=`Score = ${score}`)
-    //   : (guessResult.innerHTML = "YOU ARE WRONG");
   </script>
 </html>

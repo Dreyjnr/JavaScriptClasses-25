@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input type="text" id="myInput" />
+
+    <button onclick="add(1)">1</button>
+    <button onclick="add(2)">2</button>
+    <button onclick="add(3)">3</button>
+    <button onclick="add(4)">4</button>
+    <button onclick="add(5)">5</button>
+    <button onclick="add(6)">6</button>
+    <button onclick="add('+')">+</button>
+    <button onclick="answer()">=</button>
+
+    <div id="preview"></div>
+  </body>
+</html>
+<script>
+  let input = document.getElementById("myInput");
+  let output = document.getElementById("preview");
+
+  function add(num) {
+    input.value += num;
+  }
+
+  function answer(params) {
+    let text = input.value.trim();
+    let arr = text.split("+");
+    console.log(arr);
+    let finalAns = +arr[0] + +arr[1];
+    console.log(finalAns);
+    input.value = finalAns;
+    output.innerHTML = finalAns;
+  }
+
+  let name = "aisha";
+
+  console.log(myFunc);
+
+  //function expression
+  var myFunc = function (params) {
+    console.log("hello");
+  };
+
+  myFunc();
+  let smth = "hello";
+
+  function muliplyTwoValues(num1, num2) {
+    return;
+
+    console.log("23");
+  }
+
+  console.log(muliplyTwoValues(2, 5), typeof muliplyTwoValues("2", "5"));
+
+  let finalValue = muliplyTwoValues(34, 2) + muliplyTwoValues(23, 5);
+  console.log(finalValue);
+
+  // function declaration
+  // function wow(name1 , name2) {
+  //     console.log('hi' + name1);
+  //     console.log('hi' + name2);
+  // }
+
+  // wow('wisdom' , 'aisha')
+
+  // wow('david' , 'daniel')
+
+  // wow('lol' , 'run');
+
+  function calculate(firstNum, secondNum, symbol) {
+    if (symbol === "+") {
+      console.log(firstNum + secondNum);
+    } else if (symbol === "-") {
+      console.log(firstNum - secondNum);
+    } else if (symbol === "/") {
+      console.log(firstNum / secondNum);
+    } else {
+      console.log(firstNum * secondNum);
+    }
+  }
+
+  calculate(12, 34, "+");
+  calculate(5, 6, "-");
+  calculate(55, 5, "/");
+  calculate(2, 5, "*");
+
+  // IIFE
+  (function hmmm(params) {
+    console.log("wow");
+  })();
+
+  //arrow function
+  let func1 = () => {};
+
+  func1();
+
+  function runSmth(params) {
+    return function hello(params) {
+      return function (params) {
+        return 20;
+      };
+    };
+  }
+
+  console.log(runSmth()()());
+
+  function arimethicCalculator(symbol) {
+    return function (num1, num2) {
+      if (symbol == "*") {
+        return num1 * num2;
+      } else if (symbol == "-") {
+        return num1 - num2;
+      }
+    };
+  }
+
+  console.log(arimethicCalculator("*")(2, 3));
+  console.log(arimethicCalculator("-")(2, 3));
+
+  function jump(num = 2, num2 = 5) {
+    console.log(num * num2);
+  }
+
+  jump();
+  jump(3, 4);
+  jump(6);
+
+  // function calBmi(weight = 0, height = 0) {
+  //     return weight / (height ** 2)
+  // }
+
+  // calBmi(input1.value, input2.value)
+
+  //lexical scoping
+  function a(params) {
+    let firstVariable = "First Function";
+
+    console.log(firstVariable);
+
+    return function b(params) {
+      let secondVariable = "Second Function";
+      console.log(firstVariable, secondVariable);
+
+      return function c(params) {
+        let thirdVariable = "Third Function";
+        console.log(firstVariable, secondVariable, thirdVariable);
+      };
+    };
+  }
+
+  a()()();
+
+  //void function
+  function run(params) {
+    let b = 3 + 4;
+  }
+
+  console.log(run());
+</script>

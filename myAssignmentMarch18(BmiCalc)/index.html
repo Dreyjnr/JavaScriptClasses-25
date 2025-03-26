@@ -127,7 +127,7 @@
     let bmiOutput = document.getElementById("bmiOutput");
     let weightOutput = document.getElementById("weightOutput");
 
-    const getBmi =() =>{
+    const getBmi = () => {
       let w_Input = Number(wInput.value);
       let h_Input = Number(hInput.value);
       if (w_Input <= 0 || wInput.value.trim() === "") {
@@ -135,7 +135,7 @@
       } else if (h_Input <= 0 || hInput.value.trim() === "") {
         alert("Provide a valid Height!!!");
       } else {
-        let bmi = (w_Input / ((h_Input * h_Input) / 10000)).toFixed(1);
+        let bmi = calcBMI(w_Input, h_Input);
         if (bmi < 18.5) {
           bmiOutput.innerHTML = `Your BMI is: <span>${bmi}</span>`;
           weightOutput.innerHTML = "You are Underweight";
@@ -152,6 +152,10 @@
       }
       wInput.value = "";
       hInput.value = "";
+    };
+
+    function calcBMI(weight, height) {
+      return (weight / ((height * height) / 10000)).toFixed(1);
     }
   </script>
 </html>

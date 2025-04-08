@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    <input id="input" type="search" oninput="search()" />
+    <div id="forItems"></div>
+  </body>
+  <script>
+    let products = ["rice", "beans", "onions", "spagetti", "bread"];
+
+    function display(p) {
+      forItems.innerHTML = "";
+      p.forEach((val, i, arr) => {
+        forItems.innerHTML += `<p>${val}</p>`;
+      });
+    }
+
+    display(products);
+
+    function search() {
+      let filteredProducts = products.filter((product) => {
+        return product.includes(
+          input.value.toLowerCase().trim().replaceAll(" ", "")
+        );
+      });
+
+      if (filteredProducts.length === 0) {
+        forItems.innerHTML = `<p> Product does not exist </p>`;
+        console.log(filteredProducts);
+      } else {
+        display(filteredProducts);
+      }
+    }
+  </script>
+</html>
